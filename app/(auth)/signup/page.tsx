@@ -2,18 +2,21 @@
 import {forwardRef} from "react"
 import { useRef } from "react";
 import axios from "axios"
+import { useRouter } from "next/navigation";
 
 export default function Signin() {
     const usernameRef = useRef<HTMLInputElement>(null)
     const passwordRef = useRef<HTMLInputElement>(null)
+    const router = useRouter()
     
     const handleSignup = async () => {
         const username = usernameRef.current?.value
         const password = passwordRef.current?.value
-        const response = await axios.post("http://localhost:3000/api/v1/user/details",{
+        const response = await axios.post("http://localhost:3000/api/v1/signup",{
             username,
             password
         })
+        router.push("/signin")
 
     }
     return <div className="h-screen flex justify-center flex-col">

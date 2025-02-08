@@ -9,7 +9,7 @@ export default function Home(){
     <div>
     Todo Application <br/> 
     <Link href = "/signin">Sign In</Link> <br/>
-    <Link href = "/signup">Sign Up</Link>
+    <Link href = "/signup">Sign Up</Link> 
     </div>
   </div>
 }
